@@ -1,14 +1,14 @@
 import loginElement from '../fixtures/login.json'
 
 export class loginpage {
+  constructor(page) {
+    this.page = page;
+  }
 
-    constructor (page) {
-        this.page=page;
-    }
-    async login(username, password) {
-    await this.page.getByLocator(loginElement.userNameinp).fill(username);
-    await this.page.getByLocatorf(loginElement.passWordinp).fill(password);
-    await this.page.getByLocator(loginElement.loginButton).click()
+  async login(username, password) {
+    await this.page.locator(loginElement.userNameinp).fill(username);
+    await this.page.locator(loginElement.passWordinp).fill(password);
+    await this.page.locator(loginElement.loginButton).click();
   }
 }
 
